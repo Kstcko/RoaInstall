@@ -1,0 +1,21 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime user data and database backups
+/data/*
+!/data/.gitkeep
+!/data/.htaccess
+
+# Temporary files and logs
+*.tmp
+*.log
+
+# Operating system
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

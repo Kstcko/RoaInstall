@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" role="img" aria-labelledby="title desc">
+  <title id="title">Rayong OA and Service Co., Ltd.</title>
+  <desc id="desc">Rayong OA logo in blue</desc>
+  <g fill="none" stroke="#062b9b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="19" d="M102 107c44-76 119-103 179-73 23 12 29 37 9 53-18 15-57 19-93 26-32 6-61 21-82 45"/>
+    <path stroke-width="17" d="M210 108c42-25 84-30 129-14 29 10 55 26 86 29"/>
+    <path stroke-width="12" d="M236 60c-19 19-33 38-42 58"/>
+  </g>
+  <text x="280" y="37" text-anchor="middle" fill="#062b9b" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1">บริษัท ระยอง โอเอ แอนด์ เซอร์วิส จำกัด</text>
+  <rect x="24" y="143" width="512" height="31" fill="#fff" stroke="#062b9b" stroke-width="2"/>
+  <text x="280" y="165" text-anchor="middle" fill="#062b9b" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1">RAYONG OA AND SERVICE CO., LTD.</text>
+</svg>

@@ -1,0 +1,133 @@
+/* รูปแบบของหน้าเพิ่มงาน */
+
+.work-page {
+  min-height: 100vh;
+  background: var(--n-bg);
+}
+
+.work-wrap {
+  width: min(100% - 2rem, 720px);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.work-head {
+  margin-bottom: 1.5rem;
+}
+
+.work-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-bottom: 1.25rem;
+  color: var(--n-slate);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.work-back:hover {
+  color: var(--n-primary);
+}
+
+.work-head h1 {
+  margin-bottom: .5rem;
+}
+
+.work-head p {
+  margin: 0;
+  color: var(--n-slate);
+}
+
+.work-form {
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid var(--n-border);
+  border-radius: var(--n-radius-md);
+  box-shadow: var(--n-shadow-sm);
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.work-field {
+  display: grid;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+
+.work-field label {
+  color: var(--n-navy);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.work-field input,
+.work-field select,
+.work-field textarea {
+  width: 100%;
+  padding: .75rem .9rem;
+  border: 1px solid var(--n-border);
+  border-radius: var(--n-radius-sm);
+  color: var(--n-navy);
+  background: #fff;
+}
+
+.work-field select {
+  appearance: auto;
+}
+
+.work-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.work-field input:focus,
+.work-field select:focus,
+.work-field textarea:focus {
+  outline: none;
+  border-color: var(--n-primary);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, .12);
+}
+
+.work-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.work-message {
+  margin: 0;
+  color: #b42318;
+  font-size: .85rem;
+}
+
+.work-message:empty {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .work-wrap {
+    padding: 2rem 0;
+  }
+
+  .work-form {
+    padding: 1.25rem;
+  }
+
+  .work-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .work-actions {
+    flex-direction: column-reverse;
+  }
+
+  .work-actions .btn {
+    width: 100%;
+  }
+}
