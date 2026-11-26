@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function StaffPage(){return <main className="st-page"><section className="st-shell"><header className="st-head"><Link className="st-back" href="/profile">← กลับหน้าโปรไฟล์</Link><p className="st-eyebrow">INSTALL · ADMINISTRATION</p><h1>ข้อมูลพนักงาน</h1><p className="st-sub">จัดการบัญชีตามสิทธิ์ผู้ดูแลระบบ</p></header><section className="st-list"><p role="status">ยังไม่ได้เชื่อมต่อ TiDB จึงโหลดหรือจัดการบัญชีไม่ได้</p></section></section></main>}

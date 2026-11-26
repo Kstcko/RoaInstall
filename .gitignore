@@ -31,3 +31,30 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Private keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Database backups and local database files
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+
+# Backup and preserved project folders
+*Backup*/
+/web.integration-preserved/
+
+# Backup file extensions
+*.bak
+*.backup
+*.old
+*.orig

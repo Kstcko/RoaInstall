@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function ReportPage(){return <main className="work-page report-page"><section className="work-wrap report-wrap"><header className="work-head"><Link className="work-back" href="/install">← กลับหน้ารายการงาน</Link><h1>รายงานงานติดตั้ง</h1><p>รายงานจะแสดงจากข้อมูลจริงใน TiDB</p></header><div className="work-form report-form"><p role="status">ยังไม่มีการเชื่อมต่อฐานข้อมูล จึงไม่มีข้อมูลรายงานให้แสดง</p></div></section></main>}

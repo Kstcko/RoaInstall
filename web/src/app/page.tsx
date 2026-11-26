@@ -1,55 +1,91 @@
-import styles from "./page.module.css";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import HomeNavbar from "./HomeNavbar";
+
+export const metadata: Metadata = {
+  title: "หน้าแรก | Rayong OA and Service",
+  description: "Rayong OA and Service ระบบจัดการงานและบริการสำหรับองค์กร",
+};
 
 export default function Home() {
-  const databaseConfigured = Boolean(process.env.DATABASE_URL);
-
   return (
-    <main className={styles.dashboard}>
-      <aside className={styles.sidebar}>
-        <div className={styles.brand}>
-          <div className={styles.brandLogo}>RI</div>
-          <div><h1>RoaInstall</h1><span>Install Management</span></div>
-        </div>
-        <p className={styles.menuLabel}>เมนูหลัก</p>
-        <nav className={styles.navigation} aria-label="เมนูหลัก">
-          <a className={styles.active} href="#overview">ภาพรวม</a>
-          <a href="#install-jobs">งานติดตั้ง</a>
-          <a href="/trash">ถังขยะ</a>
-          <a href="/login">เข้าสู่ระบบ</a>
-        </nav>
-        <div className={styles.sidebarBottom}>ระบบจัดการงานติดตั้ง</div>
-      </aside>
+    <>
+      <HomeNavbar />
 
-      <section className={styles.mainContent}>
-        <header className={styles.topbar}>
-          <div><span className={styles.breadcrumb}>RoaInstall / ภาพรวม</span><h2>ภาพรวมงานติดตั้ง</h2></div>
-          <span className={databaseConfigured ? styles.systemStatus : styles.systemError}>
-            <span className={styles.statusDot} />
-            {databaseConfigured ? "ตั้งค่า Database แล้ว · รอตรวจการเชื่อมต่อ" : "ยังไม่ได้เชื่อมต่อฐานข้อมูล"}
-          </span>
-        </header>
+      <header className="hero">
+        <div className="container">
+          <div className="i-layout">
+            <div className="i-copy">
+              <span className="i-eyebrow">Rayong OA and Service</span>
 
-        <div className={styles.content} id="overview">
-          <section className={styles.welcome}>
-            <div><span className={styles.eyebrow}>INSTALL MANAGEMENT</span><h3>จัดการงานติดตั้งในที่เดียว</h3><p>รายการและสรุปงานจะแสดงเมื่อเชื่อมต่อฐานข้อมูล TiDB Cloud</p></div>
-            <div className={styles.welcomeDecoration}>RI</div>
-          </section>
+              <h1 className="i-title">
+                บริการสำนักงานและระบบจัดการงาน{" "}
+                <span>ที่พร้อมดูแลคุณ</span>
+              </h1>
 
-          <section className={styles.summarySection} aria-labelledby="summary-heading">
-            <div className={styles.sectionHeading}><div><h3 id="summary-heading">สรุปสถานะงาน</h3><p>ข้อมูลจากฐานข้อมูลจริงเท่านั้น</p></div></div>
-            <div className={styles.emptyState} role="status">
-              <strong>ยังไม่มีข้อมูลให้แสดง</strong>
-              <span>{databaseConfigured ? "ยังไม่สามารถยืนยันการเชื่อมต่อฐานข้อมูลได้" : "กรุณาตั้งค่า DATABASE_URL ของ TiDB Cloud ใน Environment Variables"}</span>
+              <p className="i-intro">
+                ดูแลงานแจ้งซ่อม ติดตามสถานะ และสรุปผลการทำงานขององค์กรไว้ในที่เดียว
+                เพื่อให้ทุกบริการเดินหน้าได้อย่างเป็นระบบ
+              </p>
+
+              <div className="i-actions">
+                <Link href="/install/new" className="btn btn-primary i-big">
+                  แจ้งซ่อม / เพิ่มงาน <i className="bi bi-arrow-right" />
+                </Link>
+
+                <Link href="/install" className="btn light-button i-big">
+                  ดูงานทั้งหมด
+                </Link>
+              </div>
+
+              <div className="i-points">
+                <span>
+                  <i className="bi bi-check-circle-fill" />
+                  บริการด้วยความใส่ใจ
+                </span>
+                <span>
+                  <i className="bi bi-check-circle-fill" />
+                  ติดตามงานได้ชัดเจน
+                </span>
+                <span>
+                  <i className="bi bi-check-circle-fill" />
+                  ข้อมูลพร้อมสำหรับองค์กร
+                </span>
+              </div>
             </div>
-          </section>
 
-          <section className={styles.taskSection} id="install-jobs">
-            <div className={styles.sectionHeading}><div><h3>งานติดตั้งล่าสุด</h3><p>ไม่มีการใช้ข้อมูลตัวอย่าง</p></div></div>
-            <div className={styles.emptyState}><strong>รายการงานยังไม่พร้อมใช้งาน</strong><span>ระบบจะแสดงงานหลังจากตั้งค่าฐานข้อมูลและเข้าสู่ระบบ</span></div>
-          </section>
-          <footer className={styles.footer}><span>RoaInstall Management System</span><span>TiDB Cloud · MySQL-compatible</span></footer>
+            <div className="i-preview">
+              <div className="i-img i-image">
+                <div className="i-card">
+                  <div className="i-card-head">
+                    <strong>ศูนย์จัดการงาน</strong>
+                    <span className="i-status">ระบบพร้อมใช้งาน</span>
+                  </div>
+
+                  <div className="i-bar i-bar-wide" />
+                  <div className="i-bar i-bar-short" />
+
+                  <div className="i-stats">
+                    <div className="i-stat">
+                      <i className="bi bi-clipboard-check" />
+                      <strong>24/7</strong>
+                      <small>รับแจ้งงาน</small>
+                    </div>
+
+                    <div className="i-stat i-user">
+                      <i className="bi bi-bar-chart-line" />
+                      <strong>100%</strong>
+                      <small>ตรวจสอบได้</small>
+                    </div>
+                  </div>
+
+                  <div className="i-bar i-bar-wide" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
+      </header>
+    </>
   );
 }
