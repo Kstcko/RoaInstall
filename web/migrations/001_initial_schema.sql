@@ -42,7 +42,7 @@ CREATE TABLE users (
 CREATE TABLE install_jobs (
   id CHAR(36) NOT NULL PRIMARY KEY,
   job_number VARCHAR(100) NOT NULL UNIQUE,
-  job_name VARCHAR(255) NOT NULL,
+  job_name VARCHAR(255) NULL,
   supervisor_user_id CHAR(36) NOT NULL,
   assistant_user_id CHAR(36) NULL,
   job_created_date DATE NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE job_status_logs (
   changed_by_user_id CHAR(36) NOT NULL,
   changed_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
   reauthenticated BOOLEAN NOT NULL DEFAULT FALSE,
-  CONSTRAINT fk_status_logs_job FOREIGN KEY (job_id) REFERENCES install_jobs(id),
+  CONSTRAINT fk_status_logs_job FOREIGN KEY (job_id) REFERENCES install_jobs(id) ON DELETE CASCADE,
   CONSTRAINT fk_status_logs_user FOREIGN KEY (changed_by_user_id) REFERENCES users(id),
   KEY idx_status_logs_job_date (job_id, changed_at),
   KEY idx_status_logs_user_date (changed_by_user_id, changed_at)

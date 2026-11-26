@@ -40,12 +40,12 @@ export async function POST(request: Request) {
     await requirePermission(user.id, "jobs.create");
     const body = await request.json() as Record<string, unknown>;
     const jobNumber = typeof body.jobNumber === "string" ? body.jobNumber.trim() : "";
-    const jobName = typeof body.jobName === "string" ? body.jobName.trim() : "";
+    const jobName = typeof body.jobName === "string" ? body.jobName.trim() : null;
     const supervisorId = typeof body.supervisorId === "string" ? body.supervisorId : "";
     const assistantId = typeof body.assistantId === "string" && body.assistantId ? body.assistantId : null;
     const createdDate = typeof body.createdDate === "string" ? body.createdDate : "";
     const deliveryDate = typeof body.deliveryDate === "string" ? body.deliveryDate : "";
-    if (!jobNumber || jobNumber.length > 100 || !jobName || jobName.length > 255 || !supervisorId || !/^\d{4}-\d{2}-\d{2}$/.test(createdDate) || !/^\d{4}-\d{2}-\d{2}$/.test(deliveryDate) || deliveryDate < createdDate) {
+    if (!jobNumber || jobNumber.length > 100 || (jobName !== null && jobName.length > 255) || !supervisorId || !/^\d{4}-\d{2}-\d{2}$/.test(createdDate) || !/^\d{4}-\d{2}-\d{2}$/.test(deliveryDate) || deliveryDate < createdDate) {
       return NextResponse.json({ error: "กรุณาตรวจสอบข้อมูลและวันจัดส่ง" }, { status: 400 });
     }
     const db = getDatabase();
