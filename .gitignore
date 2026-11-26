@@ -2,11 +2,23 @@
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*secrets*.json
 
 # Runtime user data and database backups
 /data/*
 !/data/.gitkeep
 !/data/.htaccess
+/data/backups/
+*.sql
+*.sql.gz
+*.dump
+*.sqlite
+*.sqlite3
 
 # Temporary files and logs
 *.tmp
@@ -19,3 +31,11 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Legacy PHP files (keep locally, exclude from Next.js branch)
+/api/*.php
+
+# Keep only Next.js application on nextjs-web
+/*
+!/.gitignore
+!/web/
