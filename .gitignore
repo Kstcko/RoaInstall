@@ -19,3 +19,15 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+# Dependencies and generated files
+**/node_modules/
+**/.next/
+**/dist/
+**/build/
+**/.vercel/
+*.tsbuildinfo
+
+# Local environment files
+.env
+.env.*
+!.env.example
